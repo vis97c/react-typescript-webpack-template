@@ -1,19 +1,24 @@
-# vue-webpack-template
-Plantilla para desarrollo web con Vue.js sobre webpack.
+# react-typescript-webpack-template
 
-No olvides visitar nuestro repositorio en github: [vue-webpack-template](https://github.com/vis97c/vue-webpack-template)
+Plantilla para desarrollo web con React.js & typescript sobre webpack.
+
+No olvides visitar nuestro repositorio en github: [react-typescript-webpack-template](https://github.com/vis97c/react-typescript-webpack-template)
 
 ## Caracteristicas
 
-vue-webpack-template integra por defecto:
+react-typescript-webpack-template integra por defecto:
 
-- - Vue.js
+- - Typescript
 
-- - - Vue Router
+- - - Eslint
+
+- - - Prettier
+
+- - - Husky
+
+- - React.js
 
 - - - Custom CSS transitions
-
-- - - Inline svg / svg icons
 
 - - - Componentes
 
@@ -29,7 +34,7 @@ vue-webpack-template integra por defecto:
 
 - - - Css purge
 
-- - - Custom CSS animations with Vue.js
+- - - Custom CSS animations with React.js
 
 - - - Custom pseudo components 
 
@@ -48,7 +53,7 @@ vue-webpack-template integra por defecto:
 
 ## Instalacion
 
-Para instalarla se requiere un entorno de trabajo con node.js y composer. Recuerde clonar el repositorio.
+Para instalarla se requiere un entorno de trabajo con node.js. Recuerde clonar el repositorio.
 
 - - Instale los paquetes npm:
 
@@ -56,14 +61,6 @@ Para instalarla se requiere un entorno de trabajo con node.js y composer. Recuer
      yarn
      #O en su defecto
      npm install
-```
-
-- - **vue-webpack-template** soporta svg-icons, compile sus iconos personalizados:
-
-- - - Solo es necesario ejecutarlo una vez o al agregar mas iconos.
-
-```
-     npm run g_icons
 ```
 
 Con esto listo ya cuenta con todo lo necesario para crear y adaptar su nuevo proyecto web.
@@ -88,17 +85,15 @@ Configuracion adicional.
 
 Los archivos que debe editar se encuentran en su mayoria en la carpeta "**src/**". Todos los archivos presentes en la misma se compilaran y copiaran al directorio "**public_html**", este se creara automaticamente tras la primera compilacion.
 
-### Vue.js App
+### React.js App
 
-- - El root de su aplicacion vue se encuentra en el arhivo "**src/js/App.vue**".
+- - El root de su aplicacion vue se encuentra en el arhivo "**src/js/App.tsx**".
 
 - - Tambien recuerde que solo debe editar los archivos presentes en la carpeta "**src/**", como por ejemplo el **"index.template.html"**.
 
 - - - Si edita su contraparte presente en "**public_html**", todas sus modificaciones se sobreescribiran en la siguiente compilacion del codigo.
 
 - - El archivo "**index.template.html**" es la plantilla de tu sitio web, las modificaciones al mismo se preservaran en tu sitio, personalizelo acordemente.
-
-- - - Para las rutas prerenderizadas el valor de title sera el definido en la configuracion de vue-router "**src/js/views/index.js**"
 
 - - Si deseas copiar archivos sin necesidad de compilarlos, solo basta con copiarlos a la carpeta respectiva en el directorio "**to_public/production**". Por defecto esta funcion solo esta disponible al compilar produccion. tambien soporta el uso de subcarpetas:
 
@@ -118,7 +113,7 @@ Este es un proyecto personal y no tiene ningun animo de lucro, pero los aportes 
 
 - - - No olviden testear con antelacion.
 
-## Acerca de vue-webpack-template
+## Acerca de react-typescript-webpack-template
 
 Esta plantilla hace uso de software libre y su uso es libre en la misma medida .  
 
