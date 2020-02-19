@@ -1,0 +1,47 @@
+/** @format */
+/*
+	MAIN STYLESHEET
+
+	project definitions
+	base layout ruling
+	module concatenation
+*/
+
+@import "utils/module";
+
+:root {
+	@each $name, $font in $fonts {
+		--font-#{$name}: #{$font};
+	}
+	@each $name, $color in $colors {
+		--color-#{$name}: #{$color};
+	}
+}
+
+// @import 'fonts/module';//this project use google fonts
+@import "base/module";
+// @import "components/module";
+// @import "layouts/module";
+
+// @import 'components/module';
+// @import 'pseudo/module';
+// html{
+// 	scroll-snap-type: proximity;
+// 	scroll-snap-points-y: repeat(100vh);
+// 	scroll-snap-type: y proximity;
+// }
+body {
+	width: 100%;
+	// font-family: $main_font;
+	// background: #000;
+	overflow: hidden;
+	// color: #fff;
+	// @include flexbox(column, nowrap, flex-start, stretch);
+	// &::-webkit-scrollbar{
+	// 	width: 7px;
+	// 	background-color: #000;
+	// }
+	// &::-webkit-scrollbar-thumb{
+	// 	border-width:0;
+	// }
+}

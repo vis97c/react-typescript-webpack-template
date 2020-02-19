@@ -1,0 +1,65 @@
+/** @format */
+/*
+	Project variables
+*/
+$fonts: (
+	main: (
+		"'Times New Roman'",
+		Times,
+		serif,
+	),
+	second: (
+		"'Palatino Linotype'",
+		"'Book Antiqua'",
+		"Palatino",
+		serif,
+	),
+	awesome: "'Font Awesome 5 Free'",
+	georgia: (
+		"'Georgia Italic'",
+		"'Times New Roman'",
+		serif,
+	),
+);
+$colors: (
+	redox: #dd3333,
+	blued: #14aecf,
+	softGreen: #33a09a,
+	doraito: #c5b475,
+	newGreen: #9ecb3d,
+	yell: #faa41b,
+	purpled: #aa2173,
+	sea: #1d3464,
+	dark: #26272b,
+	dark_n1: #222327,
+	blue_dark: #2c2d32,
+	narrojo: #eb3d2d,
+	verde: #38d52f,
+	amarillo: #ffc107,
+	offline: #4b4b4e,
+	peterRiver: #3498db,
+	red: #e74c3c,
+	discord: #7289da,
+	ko-fi: #ff5f5f,
+	greentext: #66cc7a,
+);
+
+//queries
+$mobile: "screen and (max-width: 720px)";
+// verticalFix: sumar/restar 55px al height si se agrega/quita otro icono
+// $query_verticalFix: 'all and (max-height: 420px) and (min-width: 645px)';
+// $query_detachSidebar: 'all and (max-width: 1164px) and (min-width: 645px)';
+// $query_relocateSecondary: 'all and (max-width: 944px)';
+// $query_mobile:'all and (max-width: 644px)';
+
+//sizes
+$min_column_width: 560px;
+$column_width: 60%;
+
+// $b_doted:unquote('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAGklEQVQYV2NkQAOMUP5/BgYGMBsmAFeHIQAAK+oBBROgPJEAAAAASUVORK5CYII=');
+// $w_doted:unquote('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAHUlEQVQYV2NkQAOMIP7/////MzIygtlgAhlgCAAAst4EBcZjUBYAAAAASUVORK5CYII=');
+// $n_doted:unquote('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAHUlEQVQYV2NkQAOMIP5rW93/oocvg9lgAhlgCAAArD4EBb456PcAAAAASUVORK5CYII=');
+$d_doted: unquote(
+	"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAHUlEQVQYV2NkQAOMIL6auvb/WzevgtlgAhlgCAAAqMoEBbLo91sAAAAASUVORK5CYII="
+);
+$fontsize: 12; //minimal font size in px

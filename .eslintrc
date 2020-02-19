@@ -1,0 +1,60 @@
+{
+	"root": true,
+	"parserOptions": {
+		"parser": "babel-eslint",
+		"sourceType": "module",
+		"allowImportExportEverywhere": false,
+		"ecmaVersion": 2015,
+		"ecmaFeatures": {
+			"jsx": true,
+			"globalReturn": false
+		}
+	},
+	"env": {
+		"node": true,
+		"browser": true
+	},
+	"extends": ["eslint:recommended", "plugin:react/recommended"],
+	"plugins": ["prettier", "react"],
+	"rules": {
+		"no-extra-boolean-cast": "off",
+		"prettier/prettier": [
+			"error",
+			{
+				"endOfLine": "auto"
+			}
+		],
+		"no-mixed-spaces-and-tabs": ["warn", "smart-tabs"]
+	},
+	"settings": {
+		"react": {
+			"version": "detect" // Tells eslint-plugin-react to automatically detect the version of React to use
+		}
+	},
+	"overrides": [
+		{
+			"files": ["*.ts", "*.tsx"],
+			"parser": "@typescript-eslint/parser",
+			"parserOptions": {
+				"ecmaFeatures": { "jsx": true },
+				"ecmaVersion": 2018,
+				"sourceType": "module",
+				"project": "./tsconfig.json"
+			},
+			"extends": [
+				"eslint:recommended",
+				"plugin:react/recommended",
+				"plugin:@typescript-eslint/eslint-recommended",
+				"plugin:@typescript-eslint/recommended"
+			],
+			"plugins": ["react", "@typescript-eslint"],
+			"rules": {
+				"indent": ["error", 2, { "SwitchCase": 1 }],
+				"linebreak-style": ["error", "unix"],
+				"quotes": ["error", "single"],
+				"comma-dangle": ["error", "always-multiline"],
+				"@typescript-eslint/no-explicit-any": 0
+			}
+		}
+	]
+}
