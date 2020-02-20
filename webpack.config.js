@@ -20,7 +20,7 @@ function pkg(m) {
 		.replace("@", "");
 
 	// npm package names are URL-safe, but some servers don't like @ symbols
-	if (packageName.includes("jsx")) {
+	if (packageName.includes("react")) {
 		return `pkg.reactCommons`;
 	}
 	return `pkg.${packageName}`;
@@ -34,12 +34,13 @@ let config = {
 	resolve: {
 		alias: {
 			_src: path.resolve(__dirname, "src"),
-			_components: path.resolve(__dirname, "src/js/components"),
-			_helpers: path.resolve(__dirname, "src/js/helpers"),
+			_helpers: path.resolve(__dirname, "src/tsx/helpers"),
+			_reactComponents: path.resolve(__dirname, "src/tsx/components"),
+			_reactIcons: path.resolve(__dirname, "src/tsx/compiled-icons"),
 			_assets: path.resolve(__dirname, "src/assets"),
 			_scss: path.resolve(__dirname, "src/scss"),
 		},
-		extensions: [".js", ".jsx", ".ts", ".tsx", ".sass", ".scss"],
+		extensions: [".js", ".jsx", ".ts", ".tsx", ".css", ".sass", ".scss"],
 	},
 	output: {
 		path: __dirname + "/public_html",
@@ -148,7 +149,7 @@ if (isProduction) {
 		new PurgecssPlugin({
 			paths: glob.sync(
 				[
-					path.join(__dirname, "./src/index.template.html"),
+					path.join(__dirname, "./src/index.original.html"),
 					path.join(__dirname, "./src/tsx/**/*"),
 				],
 				{
@@ -220,17 +221,18 @@ if (isProduction) {
 										moduleName.charAt(0).toLowerCase() +
 										moduleName.slice(1);
 									return `component.${moduleName}`;
-								} else if (
-									m.context.includes("src\\tsx\\views")
-								) {
-									// VIEW, this mimics the [request] naming
-									let pre = String.raw`${m.context}`.replace(
-											/\\/gi,
-											"-"
-										),
-										prefix = pre.split("views-")[1] + "-";
-									return `view.${prefix + moduleName}-react`;
 								}
+								// else if (
+								// 	m.context.includes("src\\tsx\\views")
+								// ) {
+								// 	// VIEW, this mimics the [request] naming
+								// 	let pre = String.raw`${m.context}`.replace(
+								// 			/\\/gi,
+								// 			"-"
+								// 		),
+								// 		prefix = pre.split("views-")[1] + "-";
+								// 	return `view.${prefix + moduleName}-react`;
+								// }
 							}
 							return "bundle";
 						},

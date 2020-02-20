@@ -1,7 +1,9 @@
 /** @format*/
 
 import React, { Component } from "react";
-// import Mouse from "./compiled-icons/Mouse";
+import Views from "./router";
+import { Link, NavLink } from "react-router-dom";
+// import Mouse from "_reactIcons/Mouse";
 
 // interface ObjectLiteral {
 // 	[key: string]: any;
@@ -11,7 +13,7 @@ import React, { Component } from "react";
 // 	goodbye: 1,
 // };
 
-class App extends Component<
+export default class App extends Component<
 	{
 		message: String; //these are your props
 	},
@@ -35,9 +37,8 @@ class App extends Component<
 				<h2>{this.state.value}</h2>
 				<button onClick={this.myMethod}>change text</button>
 				<p>{this.props.message}</p>
+				<Views />
 			</div>
 		);
 	}
 }
-
-export default App;

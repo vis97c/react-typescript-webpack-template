@@ -19,12 +19,6 @@ import "_scss/main.scss";
 import React from "react"; // eslint-disable-line no-unused-vars
 import ReactDOM from "react-dom";
 
-// import "./compiled-icons";
-require("./compiled-icons");
-// Object.entries(svgicons).forEach(
-// 	([name, exported]: any) => (window[name] = exported)
-// );
-
 import App from "./App"; // eslint-disable-line no-unused-vars
 
 ReactDOM.render(

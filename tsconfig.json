@@ -1,7 +1,7 @@
 {
 	"compilerOptions": {
 	  "outDir": "./public_html",
-	  "module": "es6",
+	  "module": "esnext",
 	  "jsx": "react",
 	  "noImplicitAny": true,
 	  "allowSyntheticDefaultImports": true,
