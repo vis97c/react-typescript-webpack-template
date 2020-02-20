@@ -8,7 +8,7 @@
 		"production": "cross-env NODE_ENV=production webpack",
 		"dev": "cross-env NODE_ENV=development webpack",
 		"watch": "webpack-dev-server",
-		"g_icons": "vsvg -s ./svg-icons -t ./src/ts/compiled-icons"
+		"g_icons": "svgr --ext tsx --template .svgrrc.js -d ./src/tsx/compiled-icons ./svg-icons"
 	},
 	"devDependencies": {
 		"@babel/cli": "^7.8.4",
@@ -19,6 +19,7 @@
 		"@babel/plugin-syntax-import-meta": "^7.7.4",
 		"@babel/preset-env": "^7.7.4",
 		"@babel/preset-react": "^7.8.3",
+		"@svgr/cli": "^5.1.0",
 		"@types/react": "^16.9.20",
 		"@types/react-dom": "^16.9.5",
 		"@types/webpack": "^4.41.6",
@@ -32,7 +33,9 @@
 		"css-loader": "^2.1.1",
 		"dotenv": "^8.2.0",
 		"eslint": "^6.8.0",
+		"eslint-config-prettier": "^6.10.0",
 		"eslint-plugin-prettier": "^3.1.2",
+		"eslint-plugin-react": "^7.18.3",
 		"glob-all": "^3.1.0",
 		"html-beautify-webpack-plugin": "^1.0.5",
 		"html-webpack-plugin": "^3.2.0",

@@ -192,7 +192,7 @@ if (isProduction) {
 				chunks: "all",
 				cacheGroups: {
 					vendor: {
-						test: /(node_modules|vendors).+(?<!css)$/,
+						test: /(node_modules|vendors).+(?<!css)$/, // eslint-disable-line no-invalid-regexp
 						name: m => {
 							return pkg(m);
 						},
@@ -204,58 +204,41 @@ if (isProduction) {
 					// Split Vue chunks
 					react: {
 						name: m => {
-							if (m.constructor.name !== "CssModule") {
-								if (m.context.includes("node_modules")) {
-									//	PACKAGE
-									return pkg(m);
-								} else if ("rawRequest" in m) {
-									let moduleName = m.rawRequest.split("/");
-									moduleName = moduleName[
-										moduleName.length - 1
-									]
-										.split("?")[0]
-										.split(".")[0];
-									if (
-										m.context.includes(
-											"src\\ts\\components"
-										)
-									) {
-										// COMPONENT
-										moduleName =
-											moduleName.charAt(0).toLowerCase() +
-											moduleName.slice(1);
-										return `component.${moduleName}`;
-									} else if (
-										m.context.includes("src\\ts\\views")
-									) {
-										// VIEW, this mimics the [request] naming
-										let pre = String.raw`${m.context}`.replace(
-												/\\/gi,
-												"-"
-											),
-											prefix =
-												pre.split("views-")[1] + "-";
-										return `view.${prefix +
-											moduleName}-react`;
-									}
+							if (m.context.includes("node_modules")) {
+								//	PACKAGE
+								return pkg(m);
+							} else if ("rawRequest" in m) {
+								let moduleName = m.rawRequest.split("/");
+								moduleName = moduleName[moduleName.length - 1]
+									.split("?")[0]
+									.split(".")[0];
+								if (
+									m.context.includes("src\\tsx\\components")
+								) {
+									// COMPONENT
+									moduleName =
+										moduleName.charAt(0).toLowerCase() +
+										moduleName.slice(1);
+									return `component.${moduleName}`;
+								} else if (
+									m.context.includes("src\\tsx\\views")
+								) {
+									// VIEW, this mimics the [request] naming
+									let pre = String.raw`${m.context}`.replace(
+											/\\/gi,
+											"-"
+										),
+										prefix = pre.split("views-")[1] + "-";
+									return `view.${prefix + moduleName}-react`;
 								}
 							}
 							return "bundle";
 						},
-						test: /\.jsx$/,
+						test: /\.[jt]sx$/,
 						reuseExistingChunk: true,
 						enforce: true,
 						chunks: "all",
 						minSize: 0,
-					},
-					// Merge all the CSS into one file
-					styles: {
-						name: "bundle",
-						test: /\.s?css$/,
-						reuseExistingChunk: true,
-						enforce: true,
-						chunks: "all",
-						minSize: 20000,
 					},
 				},
 			},

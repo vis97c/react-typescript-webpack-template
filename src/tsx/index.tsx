@@ -16,9 +16,18 @@ console.log(
 //main app styles
 import "_scss/main.scss";
 
-import React from "react";
+import React from "react"; // eslint-disable-line no-unused-vars
 import ReactDOM from "react-dom";
 
-import App from "./App";
+// import "./compiled-icons";
+require("./compiled-icons");
+// Object.entries(svgicons).forEach(
+// 	([name, exported]: any) => (window[name] = exported)
+// );
 
-ReactDOM.render(<App />, document.querySelector("#appex"));
+import App from "./App"; // eslint-disable-line no-unused-vars
+
+ReactDOM.render(
+	<App message="esto es un mensaje de prop" />,
+	document.getElementById("root")
+);
